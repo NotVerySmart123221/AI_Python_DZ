@@ -31,14 +31,14 @@ train_loader = DataLoader(
     persistent_workers=True
 )
 
-classes = ('plane', 'car', 'bird', 'cat', 'deer')
+classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 
 images, labels = next(iter(train_loader))
 images, labels = images.to(device, non_blocking=True), labels.to(device, non_blocking=True)
 
 show_count = 10
 
-fig, axes = plt.subplots(1, show_count, figsize=(12, 2))
+fig, axes = plt.subplots(1, show_count, figsize=(15, 3))
 
 for i in range(show_count):
     img = images[i].detach().cpu() / 2 + 0.5
